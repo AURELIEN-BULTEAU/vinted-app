@@ -18,6 +18,10 @@ app.use(userRoutes);
 app.use(offerRoutes);
 app.use(listOfferRoutes);
 
+app.get("/", (req, res) => {
+  res.status(200).json({ message: "route get" });
+});
+
 app.all("*", (req, res) => {
   res.status(400).json({ message: "Page not found" });
 });
