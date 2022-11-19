@@ -1,5 +1,4 @@
 require("dotenv").config();
-mongoose.connect(process.env.MONGODB_URI);
 
 const express = require("express");
 const cors = require("cors");
@@ -14,7 +13,7 @@ const userRoutes = require("./routes/user");
 const offerRoutes = require("./routes/offer");
 const listOfferRoutes = require("./routes/list-offer");
 const { default: mongoose } = require("mongoose");
-
+mongoose.connect(process.env.MONGODB_URI);
 app.use(userRoutes);
 app.use(offerRoutes);
 app.use(listOfferRoutes);
