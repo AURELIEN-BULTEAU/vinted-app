@@ -10,9 +10,9 @@ const convertToBase64 = (file) => {
   return `data:${file.mimetype};base64,${file.data.toString("base64")}`;
 };
 cloudinary.config({
-  cloud_name: "dsncw7g0v",
-  api_key: "996443328558879",
-  api_secret: "jfqrd7ilCOGtUdOFbt7qP8hC-W0",
+  cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+  api_key: process.env.API_KEY,
+  api_secret: process.env.API_SECRET,
 });
 
 router.post(
