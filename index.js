@@ -13,6 +13,7 @@ const userRoutes = require("./routes/user");
 const offerRoutes = require("./routes/offer");
 const listOfferRoutes = require("./routes/list-offer");
 const { default: mongoose } = require("mongoose");
+
 mongoose.connect(process.env.MONGODB_URI);
 
 app.use(userRoutes);
