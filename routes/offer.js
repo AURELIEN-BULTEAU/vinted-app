@@ -23,30 +23,30 @@ router.post(
     try {
       //   const pictureToUpload = convertToBase64(req.files.picture);
 
-      //   const newOffer = new Offer({
-      //     product_name: req.body.product_name,
-      //     product_description: req.body.product_description,
-      //     product_price: req.body.product_price,
-      //     product_details: [
-      //       {
-      //         MARQUE: req.body.brand,
-      //       },
-      //       {
-      //         TAILLE: req.body.size,
-      //       },
-      //       {
-      //         ÉTAT: req.body.condition,
-      //       },
-      //       {
-      //         COULEUR: req.body.color,
-      //       },
-      //       {
-      //         EMPLACEMENT: req.body.city,
-      //       },
-      //     ],
+      const newOffer = new Offer({
+        product_name: req.body.product_name,
+        product_description: req.body.product_description,
+        product_price: req.body.product_price,
+        product_details: [
+          {
+            MARQUE: req.body.brand,
+          },
+          {
+            TAILLE: req.body.size,
+          },
+          {
+            ÉTAT: req.body.condition,
+          },
+          {
+            COULEUR: req.body.color,
+          },
+          {
+            EMPLACEMENT: req.body.city,
+          },
+        ],
 
-      //     owner: req.user,
-      //   });
+        owner: req.user,
+      });
       //   const uploadResult = await cloudinary.uploader.upload(pictureToUpload, {
       //     folder: `/vinted/offers/${newOffer._id}`,
       //   });
