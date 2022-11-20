@@ -1,3 +1,20 @@
+const express = require("express");
+const router = express.Router();
+const isAuthenticated = require("../middlewares/isAuthenticated");
+const fileUpload = require("express-fileupload");
+
+const Offer = require("../models/Offer");
+
+const cloudinary = require("cloudinary").v2;
+const convertToBase64 = (file) => {
+  return `data:${file.mimetype};base64,${file.data.toString("base64")}`;
+};
+cloudinary.config({
+  cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+  api_key: process.env.API_KEY,
+  api_secret: process.env.API_SECRET,
+});
+
 router.post(
   "/offer/publish",
   isAuthenticated,
@@ -44,3 +61,4 @@ router.post(
     }
   }
 );
+module.exports = router;
