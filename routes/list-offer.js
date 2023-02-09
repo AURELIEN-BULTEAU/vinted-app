@@ -36,7 +36,7 @@ router.get("/offer", async (req, res) => {
       .limit(limit)
       .skip((page - 1) * limit)
       .select(
-        "product_name product_price product_image product-description product_details _id"
+        "product_name product_price product_image product_description product_details _id"
       );
 
     const count = await Offer.find(filters).countDocuments();
