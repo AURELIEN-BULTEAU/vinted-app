@@ -49,7 +49,6 @@ router.post("/user/login", async (req, res) => {
   try {
     const checkUser = await User.findOne({ email: req.body.email });
 
-    console.log("c", checkUser);
     if (checkUser) {
       const checkHashReq = checkUser.hash;
       const checkHashData = SHA256(req.body.password + checkUser.salt).toString(
